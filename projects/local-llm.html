@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 検索エンジンに載せない設定。載せたくなったらこの行を消す -->
   <meta name="robots" content="noindex">
   <title>Local LLM | 清水皓仁</title>
   <meta name="description" content="ローカルLLMの推論最適化・システム開発">
@@ -21,7 +20,6 @@
       <p class="where">株式会社ジーライブ</p>
     </section>
 
-    <!-- Speculative Decoding の速度比較。実測した生成速度（tokens/s）で同じ回答を再生する -->
     <figure class="race">
       <p class="race-q">Q. PythonでCSVファイルを読み込み、日付ごとに売上を集計してグラフを保存する関数を書いてください。</p>
       <div class="race-lanes">
@@ -79,7 +77,6 @@
     const fig = document.querySelector('.race');
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // 回答を実測トークン数で等分して再生する（トークン境界は近似）
     const chars = [...D.answer];
     const tokens = Array.from({ length: D.tokens }, (_, i) =>
       chars.slice(Math.round(i * chars.length / D.tokens), Math.round((i + 1) * chars.length / D.tokens)).join(''));
@@ -88,7 +85,6 @@
       const fast = el.dataset.key === 'fast';
       const rate = fast ? D.fast : D.base;
       el.querySelector('.race-rate').textContent = rate.toFixed(1) + ' tokens/s';
-      // 通常は1トークンずつ、Speculative は数トークンの塊で確定する（平均速度は実測値に合わせる）
       const steps = [];
       let i = 0, t = 0, b = 0;
       while (i < tokens.length) {
@@ -150,7 +146,6 @@
     }
 
     fig.querySelector('.race-replay').addEventListener('click', play);
-    // 画面に入ったら1回だけ自動再生
     const io = new IntersectionObserver(es => {
       if (es.some(e => e.isIntersecting)) { io.disconnect(); play(); }
     }, { threshold: 0.3 });

@@ -1,4 +1,3 @@
-/* 色はここだけで管理（ダークモードは下で上書き） */
 :root {
   --bg: #ffffff;
   --text: #1a1a1a;
@@ -46,7 +45,6 @@ a {
   color: var(--link);
 }
 
-/* ヘッダー */
 .site-header {
   padding: 24px 0;
 }
@@ -66,7 +64,6 @@ a {
   color: var(--text);
 }
 
-/* 自己紹介 */
 .intro {
   padding: 48px 0 24px;
 }
@@ -94,7 +91,6 @@ h1 {
   margin: 16px 0 0;
 }
 
-/* セクション共通 */
 section {
   padding: 32px 0;
   scroll-margin-top: 16px;
@@ -115,7 +111,6 @@ h3 {
   font-weight: 600;
 }
 
-/* Projects */
 .projects {
   margin: 0;
   padding: 0;
@@ -160,13 +155,11 @@ h3 {
   font-size: 14px;
 }
 
-/* 研究室・会社など「どこでやったか」 */
 .where {
   color: var(--muted);
   font-size: 12px;
 }
 
-/* Experience / Education */
 .entry h3 a {
   color: inherit;
   text-decoration-thickness: 1px;
@@ -207,7 +200,6 @@ h3 {
   margin-top: 0;
 }
 
-/* 資格・将棋など「項目 ― 結果」の一覧 */
 .rows {
   margin: 0;
   padding: 0;
@@ -231,7 +223,6 @@ h3 {
   font-size: 14px;
 }
 
-/* フッター */
 .site-footer {
   margin-top: 32px;
   padding: 24px 0 48px;
@@ -244,7 +235,6 @@ h3 {
   color: var(--muted);
 }
 
-/* 詳細ページ */
 .back {
   font-size: 14px;
   color: var(--muted);
@@ -306,7 +296,6 @@ h3 {
   font-size: 13px;
 }
 
-/* Local LLM：Speculative Decoding の速度比較デモ */
 .race {
   padding: 16px;
   border: 1px solid var(--line);
@@ -362,7 +351,6 @@ h3 {
   color: var(--text);
 }
 
-/* 上にスクロールしたら、途中で切れた行が目立たないよう上端をぼかす */
 .race-text.is-scrolled {
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 2.5em);
   mask-image: linear-gradient(to bottom, transparent 0, #000 2.5em);
@@ -384,7 +372,6 @@ h3 {
   }
 }
 
-/* Speculative 側：まとめて確定した塊を一瞬だけ色付けする */
 .race-text .burst {
   background: var(--burst);
   transition: background 0.6s;
